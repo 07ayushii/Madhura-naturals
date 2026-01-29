@@ -1,0 +1,15 @@
+<h1>Wishlist</h1>
+<div id="wishlist"></div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+
+<script>
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+const div = document.getElementById("wishlist");
+
+wishlist.forEach(item => {
+  div.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
+});
+</script>
+

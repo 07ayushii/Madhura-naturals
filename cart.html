@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+</head>
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+<body>
+
+<h1>Your Cart</h1>
+<div id="cartItems"></div>
+<a href="checkout.html">Proceed to Checkout</a>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const container = document.getElementById("cartItems");
+
+if(cart.length === 0){
+  container.innerHTML = "Your cart is empty.";
+}
+
+cart.forEach(item => {
+  container.innerHTML += `<p>${item.name} - $${item.price}</p>`;
+});
+</script>
+
+</body>
+</html>

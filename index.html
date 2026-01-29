@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhura - Taste the Tradition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+</head>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-search">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">restaurant_menu</span>
+                    </div>
+                    <h1>Madhura</h1>
+                </div>
+                <input type="text" id="searchInput" placeholder="Search..." onkeydown="if(event.key==='Enter') search()">
+>
+            </div>
+            <nav>
+               <nav>
+                  <a href="index.html">Home</a>
+                  <a href="shop.html">Shop</a>
+                  <a href="about.html">Our Story</a>
+                  <a href="offers.html">Offers</a>
+                </nav>
+
+            </nav>
+            <div class="header-buttons">
+                  <a href="wishlist.html"><button><span class="material-symbols-outlined">favorite</span></button></a>
+                  <a href="profile.html"><button><span class="material-symbols-outlined">person</span></button></a>
+                  <a href="cart.html">
+                  <button class="cart">
+                      <span class="material-symbols-outlined">shopping_cart</span>
+                      <span class="cart-count" id="cartCount">0</span>
+                  </button>
+                </a>
+              </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Authentic Flavors</span>
+            <h1>Taste the Tradition. <span>Delivered Fresh.</span></h1>
+            <p>Experience the heritage of high-quality traditional farm-fresh products and spices delivered straight to your door.</p>
+            <div class="hero-buttons">
+                <button class="shop-btn">Shop Collection</button>
+                <button class="story-btn">Learn Our Story</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="heading">
+                <h2>About Madhura Naturals</h2>
+                <p>We are passionate about bringing you the finest natural products, harvested sustainably and processed with utmost care to preserve their natural goodness.</p>
+            </div>
+            <div class="story">
+                <img src="https://images.unsplash.com/photo-1555211652-5c6222f971bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhvbmV5fGVufDB8fDB8fHww" alt="Honey Image">
+                <div>
+                    <h3>Our Story</h3>
+                    <p>Madhura Naturals was founded with a simple mission: to bring pure, unadulterated natural products to families who value health and wellness.</p>
+                    <p>Our honey is sourced from pristine apiaries where bees forage on wildflowers, ensuring the highest quality and most authentic taste. Every jar is filled with nature's golden nectar, just as it should be.</p>
+                    <p>We believe in transparency, sustainability, and delivering products that nurture both people and the planet.</p>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-box">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">eco</span>
+                    </div>
+                    <h4>100% Natural</h4>
+                    <p>No additives, no preservatives.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </div>
+                    <h4>Made with Love</h4>
+                    <p>Handled with care and passion.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                    <h4>Premium Quality</h4>
+                    <p>Tested and certified standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+<section class="trending">
+  <div class="container">
+    <div class="trending-header">
+      <h2>Trending Now</h2>
+      <p>Hand-picked bestsellers based on this week's orders</p>
+    </div>
+    <div class="trending-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('https://plus.unsplash.com/premium_photo-1664273586888-859762c34ce4?q=80&w=1169&auto=format&fit=crop');">
+          <span class="tag">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <h3>Pure Wildflower Honey</h3>
+          <p>Raw, unfiltered honey from wildflower nectar.</p>
+          <div class="price-cart">
+            <span class="price">$9.99</span>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1613548058193-1cd24c1bebcf?w=600&auto=format&fit=crop&q=60');">
+          <span class="tag">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <h3>Organic Honey</h3>
+          <p>Authentic melt-in-the-mouth sweet and pure honey.</p>
+          <div class="price-cart">
+            <span class="price">$9.99</span>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('https://media.istockphoto.com/id/186831897/photo/flour-and-wheat-grains.webp?a=1&b=1&s=612x612&w=0&k=20&c=XRT7ZyZ4Az7pAKptVXnsmcogDwwMBgqNncX7YuJJmFo=');">
+        </div>
+        <div class="product-info">
+          <h3>Special Wheat Flour</h3>
+          <p>Traditional stone-ground wheat flour made from carefully selected whole wheat grains.</p>
+          <div class="price-cart">
+            <span class="price">$5.49</span>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAX_57dseK6VoFA17V24_uK8FOKxZWT1ZBJBgcmtVheSgg4h97_vQG4pyt9OjRdbpbqg_Vz0Jm68daIjxweyC7eg0gkeQ6g2THe1fwhpcCkoDqxL1w_F52DMT9MfWdCcMl5JQincbidprkoxxahMB8ZU6ua-KimhvHCePPQ4mIfftwwq8XxJt9mRSgDZPI4ZlyViBom13W5WU6fxAn-LqKGi8QPp4PADFhukJIWUF9DT8rXR1lP6nKFKhUIKY2kka0mlmqpb_A-6M5I');">
+          <span class="tag">Organic</span>
+        </div>
+        <div class="product-info">
+          <h3>Hand-ground Turmeric</h3>
+          <p>Pure organic turmeric powder with high curcumin content. No additives.</p>
+          <div class="price-cart">
+            <span class="price">$7.99</span>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Shop by Category -->
+    <!-- Shop by Category -->
+<section class="shop-category">
+    <div class="container">
+        <h2>Shop by Category</h2>
+        <div class="categories">
+            <!-- Honey -->
+            <div class="category-card">
+                <img src="https://media.istockphoto.com/id/598241944/photo/honey-in-jar-and-bunch-of-dry-lavender.webp?a=1&b=1&s=612x612&w=0&k=20&c=BLpDU1478KYyFQWs8wcHq44K84A1KtrZ9XgiyFeRqbM=" alt="Honey">
+                <h3>Honey</h3>
+            </div>
+            <!-- Jaggery -->
+            <div class="category-card">
+                <img src="https://img.freepik.com/free-photo/healthy-jaggery-still-life-arrangement_23-2149161555.jpg?t=st=1769592667~exp=1769596267~hmac=fa18b4a36f8d64092a75e926e990b1b4b83d1def61061d5da09b70a5c220de06" alt="Jaggery">
+                <h3>Jaggery</h3>
+            </div>
+            <!-- Millets -->
+            <div class="category-card">
+                <img src="https://img.freepik.com/free-photo/collection-common-food-allergens-people_23-2149870534.jpg?t=st=1769592598~exp=1769596198~hmac=13893fd29bed150c31c19e6048d48152996d973c562f06a8438405b52bc445af" alt="Millets">
+                <h3>Millets</h3>
+            </div>
+            <!-- Flour -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1627735483792-233bf632619b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmxvdXJ8ZW58MHx8MHx8fDA%3D" alt="Flour">
+                <h3>Flour</h3>
+            </div>
+            <!-- Rice -->
+            <div class="category-card">
+                <img src="https://plus.unsplash.com/premium_photo-1723726831918-9a8542e705cb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJyb3duJTIwYW5kJTIwd2hpdGUlMjByaWNlfGVufDB8fDB8fHww" alt="Rice">
+                <h3>Rice</h3>
+            </div>
+            <!-- Spices -->
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BpY2VzfGVufDB8fDB8fHww" alt="Spices">
+                <h3>Spices</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Why Choose Madura Section -->
+<section class="why-choose">
+  <div class="container why-flex">
+    <div class="why-text">
+      <h2>Why Choose Madura?</h2>
+      <div class="why-grid">
+        <div class="why-box">
+          <div class="icon">🌿</div>
+          <h4>100% Natural</h4>
+          <p>No preservatives or artificial coloring. Just pure food.</p>
+        </div>
+        <div class="why-box">
+          <div class="icon">📜</div>
+          <h4>Traditional Recipes</h4>
+          <p>Crafted using generational secrets and techniques.</p>
+        </div>
+        <div class="why-box">
+          <div class="icon">🚚</div>
+          <h4>Fresh Delivery</h4>
+          <p>Packed same-day to preserve crunch and aroma.</p>
+        </div>
+        <div class="why-box">
+          <div class="icon">🤝</div>
+          <h4>Ethically Sourced</h4>
+          <p>Supporting local farmers and small-scale artisans.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-image">
+      <img src="https://plus.unsplash.com/premium_photo-1726880614839-faa6caa3b3d4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG5hdHVyYWwlMjBob25leSUyMCUyQ3NwaWNlcyUyQ21pbGxldHN8ZW58MHx8MHx8fDA%3D" alt="Traditional kitchen setting with brass utensils and spices">
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top container">
+    <!-- Column 1: Logo + About -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <div class="logo-icon">🍯</div>
+        <h2>Madura</h2>
+      </div>
+      <p>Bringing the authentic taste of traditional kitchens to modern homes across the globe. We believe in quality, tradition, and purity.</p>
+      <div class="social-icons">
+        <a href="#"><span>🌐</span></a>
+        <a href="#"><span>🔗</span></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Categories</a></li>
+        <li><a href="#">Weekly Deals</a></li>
+        <li><a href="#">Store Locator</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Customer Service -->
+    <div class="footer-col">
+      <h4>Customer Service</h4>
+      <ul>
+        <li><a href="#">Track Your Order</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Refund & Returns</a></li>
+        <li><a href="#">Contact Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>📍 MADHURA NATURALS </li>
+        <li>📞 +91  </li>
+        <li>✉ madhuranturals.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom copyright row -->
+  <div class="footer-bottom">
+    <p>© 2025 Madhura Naturals Foods Private Limited. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+

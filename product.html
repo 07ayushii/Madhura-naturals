@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+
+<!--header-->
+<header>
+        <div class="header-container">
+            <div class="logo-search">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">restaurant_menu</span>
+                    </div>
+                    <h1>Madhura</h1>
+                </div>
+              <input type="text" id="searchInput" placeholder="Search..." onkeydown="if(event.key==='Enter') search()">
+            </div>
+           
+               <nav>
+                  <a href="index.html">Home</a>
+                  <a href="shop.html">Shop</a>
+                  <a href="about.html">Our Story</a>
+                  <a href="offers.html">Offers</a>
+                </nav>
+
+            <div class="header-buttons">
+                  <a href="wishlist.html"><button><span class="material-symbols-outlined">favorite</span></button></a>
+                  <a href="profile.html"><button><span class="material-symbols-outlined">person</span></button></a>
+                  <a href="cart.html">
+                  <button class="cart">
+                      <span class="material-symbols-outlined">shopping_cart</span>
+                      <span class="cart-count" id="cartCount">0</span>
+                  </button>
+                </a>
+              </div>
+
+            </div>
+        </div>  </header>
+
+<section class="about">
+  <div class="container" id="productDetails"></div>
+</section>
+
+<!--footer-->
+<footer class="footer">
+  <div class="footer-top container">
+    <!-- Column 1: Logo + About -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <div class="logo-icon">🍯</div>
+        <h2>Madura</h2>
+      </div>
+      <p>Bringing the authentic taste of traditional kitchens to modern homes across the globe. We believe in quality, tradition, and purity.</p>
+      <div class="social-icons">
+        <a href="#"><span>🌐</span></a>
+        <a href="#"><span>🔗</span></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Categories</a></li>
+        <li><a href="#">Weekly Deals</a></li>
+        <li><a href="#">Store Locator</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Customer Service -->
+    <div class="footer-col">
+      <h4>Customer Service</h4>
+      <ul>
+        <li><a href="#">Track Your Order</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Refund & Returns</a></li>
+        <li><a href="#">Contact Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>📍 MADHURA NATURALS </li>
+        <li>📞 +91  </li>
+        <li>✉ madhuranturals.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom copyright row -->
+  <div class="footer-bottom">
+    <p>© 2025 Madhura Naturals Foods Private Limited. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const product = products.find(p => p.id == id);
+
+document.getElementById("productDetails").innerHTML = `
+  <div class="story">
+    <img src="${product.image}" alt="${product.name}">
+    <div>
+      <h2>${product.name}</h2>
+      <h3 style="color:#deae06;font-size:24px">₹${product.price}</h3>
+      <p>${product.description}</p>
+
+      <div class="hero-buttons" style="margin-top:20px">
+        <button class="shop-btn">Add to Cart</button>
+        <button class="story-btn">Add to Wishlist</button>
+      </div>
+    </div>
+  </div>
+`;
+</script>
+</body>
+</html>
+
