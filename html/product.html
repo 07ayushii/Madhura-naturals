@@ -107,6 +107,11 @@
 </footer>
 
 <script src="../js/data.js"></script>
+<script src="../js/script.js"></script>
+<section class="product-page">
+  <div id="productDetails" class="product-wrapper"></div>
+</section>
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -121,14 +126,156 @@ document.getElementById("productDetails").innerHTML = `
       <h3 style="color:#deae06;font-size:24px">₹${product.price}</h3>
       <p>${product.description}</p>
 
+<div class="qty-box">
+  <button onclick="changeQty(-1)"></button>
+  <input type="text" id="qty" value="1" readonly>
+  <button onclick="changeQty(1)">+</button>
+</div>
+
       <div class="hero-buttons" style="margin-top:20px">
-        <button class="shop-btn">Add to Cart</button>
+        <button class="shop-btn" onclick="handleAddToCart()">Add to Cart</button>
         <button class="story-btn">Add to Wishlist</button>
       </div>
+
+      <p id="cartMsg" style="color:green;font-weight:600;margin-top:10px;display:none;">
+        ✔ Item added to cart
+      </p>
     </div>
   </div>
 `;
+<button class="add-to-cart-btn" onclick="
+addToCart({
+  id: 1,
+  name: 'Pure Wildflower Honey',
+  price: 299,
+  quantity: parseInt(document.getElementById('qty').value),
+  image: 'images/honey.jpg'
+})
+">Add to Cart</button>
+
+
+function handleAddToCart() {
+  addToCart(product.id);
+
+  const msg = document.getElementById("cartMsg");
+  msg.style.display = "block";
+
+  setTimeout(() => {
+    msg.style.display = "none";
+  }, 2000);
+}
 </script>
+
+<script>
+function changeQty(val) {
+  const qty = document.getElementById("qty");
+  let current = parseInt(qty.value);
+  if (current + val >= 1) {
+    qty.value = current + val;
+  }
+}
+</script>
+<script>
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const product = {
+    id: 1,
+    name: "Pure Wildflower Honey",
+    price: 299,
+    quantity: parseInt(document.getElementById("qty")?.value || 1),
+    image: "images/honey.jpg"
+  };
+
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Product added to cart!");
+}
+</script>
+<script>
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  showAddedMessage();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const countEl = document.getElementById("cartCount");
+  if (countEl) countEl.innerText = total;
+}
+
+function showAddedMessage() {
+  const msg = document.createElement("div");
+  msg.innerText = "✅ Item added to cart";
+  msg.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #deae06;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 9999;
+  `;
+  document.body.appendChild(msg);
+  setTimeout(() => msg.remove(), 1500);
+}
+</script>
+
+
+<script>
+function addToCartFromProduct() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const item = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    quantity: 1
+  };
+
+  const existing = cart.find(p => p.id === item.id);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push(item);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert("✅ Item added to cart");
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce((sum, i) => sum + i.quantity, 0);
+  document.getElementById("cartCount").innerText = total;
+}
+</script>
+
+
 </body>
 </html>
 

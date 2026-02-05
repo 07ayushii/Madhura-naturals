@@ -8,14 +8,49 @@
 <script src="../js/script.js"></script>
 
 <body>
+ <header>
+        <div class="header-container">
+            <div class="logo-search">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">restaurant_menu</span>
+                    </div>
+                    <h1>Madhura</h1>
+                </div>
+                <input type="text" id="searchInput" placeholder="Search..." onkeydown="if(event.key==='Enter') search()">
 
+            </div>
+          
+               <nav>
+                  <a href="index.html">Home</a>
+                  <a href="shop.html">Shop</a>
+                  <a href="about.html">Our Story</a>
+                  <a href="offers.html">Offers</a>
+                </nav>
+
+          
+            <div class="header-buttons">
+                  <a href="wishlist.html"><button><span class="material-symbols-outlined">favorite</span></button></a>
+                  <a href="profile.html"><button><span class="material-symbols-outlined">person</span></button></a>
+                  <a href="cart.html">
+                  <button class="cart">
+                      <span class="material-symbols-outlined">shopping_cart</span>
+                      <span class="cart-count" id="cartCount">0</span>
+                  </button>
+                </a>
+              </div>
+
+            </div>
+        </div>
+    </header>
+    
 <h1 class="page-title">User Profile</h1>
-
-<div class="content-box">
-  <p>Name: Ayushi Bhatt</p>
-  <p>Email: ayushi@example.com</p>
-  <p>Orders: 3</p>
-</div>
+<section class="profile">
+  <div class="container">
+    <h2>My Profile</h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+</section>
 
 </body>
 </html>

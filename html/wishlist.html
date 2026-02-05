@@ -1,15 +1,63 @@
-<h1>Wishlist</h1>
-<div id="wishlist"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist | Madhura</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER (copy same as index.html) -->
+<header>
+  <div class="header-container">
+    <div class="logo-search">
+      <div class="logo">
+        <div class="logo-icon">
+          <span class="material-symbols-outlined">restaurant_menu</span>
+        </div>
+        <h1>Madhura</h1>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">Our Story</a>
+      <a href="offers.html">Offers</a>
+    </nav>
+
+    <div class="header-buttons">
+                  <a href="wishlist.html"><button><span class="material-symbols-outlined">favorite</span></button></a>
+                  <a href="profile.html"><button><span class="material-symbols-outlined">person</span></button></a>
+                  <a href="cart.html">
+                  <button class="cart">
+                      <span class="material-symbols-outlined">shopping_cart</span>
+                      <span class="cart-count" id="cartCount">0</span>
+                  </button>
+                </a>
+              </div>
+
+            </div>
+  </div>
+</header>
+
+<!-- WISHLIST SECTION -->
+<section class="wishlist">
+  <div class="container">
+    <h2>Your Wishlist</h2>
+    <div id="wishlistItems" class="trending-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER (same as index.html) -->
+<footer class="footer">
+  <!-- keep your existing footer here exactly -->
+</footer>
+
 <script src="../js/data.js"></script>
 <script src="../js/script.js"></script>
 
-
-<script>
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-const div = document.getElementById("wishlist");
-
-wishlist.forEach(item => {
-  div.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
-});
-</script>
-
+</body>
+</html>

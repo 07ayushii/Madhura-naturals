@@ -1,24 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Checkout</title>
+  <meta charset="UTF-8">
+  <title>Checkout – Madhura</title>
+
   <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
-<script src="../js/data.js"></script>
-<script src="../js/script.js"></script>
 
 <body>
 
-<h1 class="page-title">Checkout</h1>
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <div class="logo-icon">
+        <span class="material-symbols-outlined">restaurant_menu</span>
+      </div>
+      <h1>Madhura</h1>
+    </div>
 
-<div class="content-box">
-  <form>
-    <input placeholder="Full Name" required><br><br>
-    <input placeholder="Address" required><br><br>
-    <input placeholder="Phone Number" required><br><br>
-    <button>Place Order</button>
-  </form>
-</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+
+    <div class="header-buttons">
+      <a href="wishlist.html"><button><span class="material-symbols-outlined">favorite</span></button></a>
+      <a href="profile.html"><button><span class="material-symbols-outlined">person</span></button></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CHECKOUT ============ -->
+<section class="checkout">
+  <div class="container checkout-grid">
+
+    <!-- LEFT: ADDRESS + PAYMENT -->
+    <div class="checkout-form">
+      <h2>Shipping Details</h2>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Mobile Number" required>
+      <input type="text" placeholder="Address" required>
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="Pincode">
+
+      <h2>Payment Method</h2>
+
+      <label><input type="radio" name="payment" checked> Cash on Delivery</label><br>
+      <label><input type="radio" name="payment"> UPI</label><br>
+      <label><input type="radio" name="payment"> Credit / Debit Card</label>
+
+      <button class="place-order" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div id="checkoutItems"></div>
+
+      <hr>
+      <h3>Total: ₹<span id="checkoutTotal">0</span></h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2025 Madhura Naturals. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ JS ============ -->
+<script src="../js/script.js"></script>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const itemsDiv = document.getElementById("checkoutItems");
+const totalSpan = document.getElementById("checkoutTotal");
+
+function loadCheckout() {
+  let total = 0;
+  itemsDiv.innerHTML = "";
+
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+
+    itemsDiv.innerHTML += `
+      <p>${item.name} × ${item.quantity}
+      <span>₹${item.price * item.quantity}</span></p>
+    `;
+  });
+
+  totalSpan.innerText = total;
+}
+
+function placeOrder() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  alert("🎉 Order placed successfully!");
+  localStorage.removeItem("cart");
+  window.location.href = "index.html";
+}
+
+loadCheckout();
+updateCartCount();
+</script>
 
 </body>
 </html>
